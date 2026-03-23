@@ -41,9 +41,11 @@ nav:
   - Home: index.md
   - Getting Started:
       - Staff Roles & Permissions: getting-started/permissions.md
+  - Guides:
+      - Modmail Snippets: guides/modmail-snippets.md
+      - VJ Review Guide: guides/review-guide.md
   - Verified Jobs:
       - Overview & Workflow: features/verified-jobs.md
-      - Review Guide: guides/review-guide.md
       - Token System: features/token-system.md
       - VJ Dashboard: dashboards/vj-dashboard.md
   - Features:
