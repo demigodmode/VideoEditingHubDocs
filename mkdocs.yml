@@ -1,0 +1,59 @@
+site_name: Video Editing Hub Staff Docs
+site_description: Staff documentation for the Video Editing Hub Discord server
+site_url: https://video-editing-hub-docs.readthedocs.io
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Staff Roles & Permissions: getting-started/permissions.md
+  - Verified Jobs:
+      - Overview & Workflow: features/verified-jobs.md
+      - Review Guide: guides/review-guide.md
+      - Token System: features/token-system.md
+      - VJ Dashboard: dashboards/vj-dashboard.md
+  - Features:
+      - Testimonials: features/testimonials.md
+      - Scammer Protection: features/scammer-protection.md
+      - Ad Responses: features/ad-responses.md
+      - Cooldown Role: features/cooldown-role.md
+      - Keep Alive: features/keep-alive.md
+      - Auto-Publish: features/auto-publish.md
+      - Auto-Close Threads: features/auto-close-threads.md
+      - Message Management: features/message-management.md
+  - Dashboards:
+      - Config Dashboard: dashboards/config-dashboard.md
