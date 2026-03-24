@@ -19,13 +19,15 @@ This page covers the full system end to end. If you're a reviewer, the [Review G
     - Content format (video jobs only): Long Form, Medium Form, Short Form
     - Payment timing: Upfront, Partial Upfront, After Completion
     - Sample work policy: No Sample Required, Paid Sample
-    - Agency status: Yes / No
+    - Agency status: Yes / No (skipped if user already has the agency role — they're locked to agency)
 5. **Modal opens** with fields for description, payment method, budget, and reference URLs. Thumbnail jobs get a FileUpload component for up to 6 images instead of URLs
 6. **Auto-validation** checks for:
     - Crypto keywords or wallet addresses (Bitcoin/Ethereum)
     - External contact info (email, phone, Telegram, WhatsApp)
     - Invalid budget ("TBD", "negotiable" without numbers)
     - Bad payment methods (gift cards, in-game currency, "exposure")
+    - Percentage-based or unreliable payment (revenue share, "based on views", "when I get monetized")
+    - Hidden payment amounts ("DM me for price", "ask in DM")
     - Profanity
 7. **Duplicate detection** warns if 85%+ similar to a recent submission from the last 7 days
 8. **Preview** shows how the job will appear. User can edit, cancel, or submit
@@ -80,6 +82,9 @@ For a practical breakdown of when to approve, reject, or hold (with green/red fl
 | 8 | Suspected scam | No |
 | 9 | Wrong channel / not a paid job | No |
 | 10 | Other (see note) | Yes |
+| 11 | Monthly/weekly rate instead of per-project | Yes |
+| 12 | Payment amount not disclosed | Yes |
+| 13 | Unreliable payment (percentage/views) | No |
 
 "Other" opens a modal for a custom note. The hold dropdown only shows holdable reasons.
 
@@ -146,7 +151,7 @@ Put it on Hold with the relevant reason. User gets a DM asking for clarification
 Reject with "Suspected scam". User gets a strike. Auto-validation catches most of these but some slip through.
 
 ### Agency without role
-If agency-only enforcement is on, use the Mark as Agency button on the review card. Otherwise the role gets auto-assigned when they select "Yes" in the agency dropdown.
+If agency-only enforcement is on, use the Mark as Agency button on the review card. Otherwise the role gets auto-assigned when they select "Yes" in the agency dropdown. Once a user has the agency role, they can't submit as an individual — the agency dropdown is skipped entirely on future submissions.
 
 ### Thumbnail job with no images
 Either Hold for "References/examples missing", or approve anyway. The fallback notice in the forum thread guides them to upload images.
@@ -158,7 +163,7 @@ Check if the original job is still open. If yes, reject as duplicate. If the ori
 Normal. Some users have DMs disabled. The job still processes, no action needed.
 
 ### User complaining about auto-rejection
-Auto-validation can have false positives. Check what triggered it (crypto keywords, contact info patterns, budget format, payment method). Ask the user to rephrase and resubmit.
+Auto-validation can have false positives. Check what triggered it (crypto keywords, contact info patterns, budget format, payment method, percentage-based pay, "DM for price"). Ask the user to rephrase and resubmit.
 
 ---
 

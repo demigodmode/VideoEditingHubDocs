@@ -45,6 +45,9 @@ When you reject or hold, you pick a reason from a dropdown:
 | 8 | Suspected scam | No |
 | 9 | Wrong channel / not a paid job | No |
 | 10 | Other (see note) | Yes |
+| 11 | Monthly/weekly rate instead of per-project | Yes |
+| 12 | Payment amount not disclosed | Yes |
+| 13 | Unreliable payment (percentage/views) | No |
 
 Hold only shows the holdable reasons. "Other" opens a text box for a custom note.
 
