@@ -11,6 +11,7 @@ Review cards show up in the review channel. Read the job details, click one of t
 | **Approve** | Job is legit, well-written, reasonable budget, acceptable payment method |
 | **Reject** | Scam, budget too low, bad payment method, rule violation, duplicate |
 | **Hold** | Need more info, want to clarify something, want a second opinion |
+| **Withdraw** | Only available after holding. Use when the submitter doesn't respond — cancels with no strike |
 
 ## Green flags
 
@@ -31,7 +32,7 @@ Review cards show up in the review channel. Read the job details, click one of t
 
 ## Rejection reasons
 
-When you reject or hold, you pick a reason from a dropdown:
+When you reject or hold, you pick one or more reasons from a dropdown. All selected reasons show up as a bullet list in the submitter's DM.
 
 | # | Reason | Can hold? |
 |---|--------|-----------|
@@ -48,12 +49,19 @@ When you reject or hold, you pick a reason from a dropdown:
 | 11 | Monthly/weekly rate instead of per-project | Yes |
 | 12 | Payment amount not disclosed | Yes |
 | 13 | Unreliable payment (percentage/views) | No |
+| 14 | Unrealistic expectations | No |
+| 15 | Currency not specified | Yes |
+| 16 | Per-project rate, not monthly/weekly rate | No |
+| 17 | Game currency/crypto payment not allowed | No |
+| 18 | Minimum budget requirement | Yes |
+| 19 | Two separate jobs in one post | No |
 
 Hold only shows the holdable reasons. "Other" opens a text box for a custom note.
 
 ## Review tips
 
-- Use Hold over Reject when something is fixable. Holds don't add strikes
+- Use Hold over Reject when something is fixable. Holds don't add strikes. If the user doesn't respond after ~48h, Withdraw to clean it up
+- You can select multiple rejection/hold reasons at once — all of them show up in the submitter's DM
 - Be consistent. Discuss edge cases with the team so budget thresholds and standards stay fair
 - Aim for 24h turnaround. Faster reviews mean better experience for posters
 - When in doubt, Hold. Better to pause and ask than approve something sketchy
@@ -76,9 +84,16 @@ Hold only shows the holdable reasons. "Other" opens a text box for a custom note
 **Hold:**
 
 - No strike added
-- User gets a DM explaining what's needed
+- User gets a DM explaining what's needed and how to open a ticket
 - Review card turns gold
-- Approve/Reject buttons stay active for follow-up
+- Hold button is replaced by Withdraw. Approve/Reject stay active
+
+**Withdraw** (after hold only):
+
+- No strike added
+- User gets a DM letting them know the submission was withdrawn and they need to re-submit
+- Intake thread is archived
+- Review card turns gray
 
 ## Privacy
 

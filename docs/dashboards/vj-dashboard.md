@@ -23,6 +23,7 @@ Opens an ephemeral interactive message with navigation buttons for each panel.
 |---------|-------------|
 | Agency role | Auto-assigned when user selects "agency" |
 | Submitter roles | Required to submit (staff are exempt) |
+| Blocked roles | Users with any of these roles cannot submit jobs — enforced regardless of staff status |
 | Applicant roles | Required to click Apply on a job |
 
 **Token:**

@@ -9,7 +9,7 @@ This page covers the full system end to end. If you're a reviewer, the [Review G
 ### What the user sees
 
 1. **Click the Submit button** in the info channel
-2. **Pre-checks run** - system enabled, user has required submitter role (staff are exempt), not blocked by strikes, not on cooldown, no duplicate drafts
+2. **Pre-checks run** - system enabled, user has required submitter role (staff are exempt), user doesn't have a blocked role, not blocked by strikes, not on cooldown, no duplicate drafts
 3. **Monetization gate** (if enabled, see [Token System](token-system.md) for full details):
     - Users with a Hiring Pass role skip this entirely
     - Otherwise the user needs at least 1 job token (purchased from Server Shop)
@@ -60,8 +60,9 @@ Validated submissions appear in the review channel as embed cards.
 | Button | What it does |
 |--------|-------------|
 | **Approve** | Publishes to forum, sends approval DM, consumes 1 token if monetization is on and user has no Hiring Pass |
-| **Reject** | Adds 1 strike, sends rejection DM with reason. User blocked at 3 strikes (configurable) |
-| **Hold** | Pauses for clarification, sends hold DM. No strike. Approve/Reject buttons stay active |
+| **Reject** | Adds 1 strike, sends rejection DM with reason(s). User blocked at 3 strikes (configurable) |
+| **Hold** | Pauses for clarification, sends hold DM with ticket instructions. No strike. Once held, the Hold button is replaced by Withdraw |
+| **Withdraw** | Only appears after a hold. Cancels the submission with no strike — use when you don't hear back from the submitter. Sends the submitter a DM and archives the intake thread |
 | **Mark as Agency** | Only shows when agency-only enforcement is on. Assigns agency role to the submitter |
 
 Only one reviewer can claim a submission. If someone else already acted on it, the button tells you.
@@ -69,6 +70,8 @@ Only one reviewer can claim a submission. If someone else already acted on it, t
 For a practical breakdown of when to approve, reject, or hold (with green/red flags and tips), see the [Review Guide](../guides/review-guide.md).
 
 ### Rejection and hold reasons
+
+Staff can select multiple reasons at once. All selected reasons show up as a bullet list in the submitter's DM.
 
 | # | Reason | Holdable? |
 |---|--------|-----------|
@@ -85,6 +88,12 @@ For a practical breakdown of when to approve, reject, or hold (with green/red fl
 | 11 | Monthly/weekly rate instead of per-project | Yes |
 | 12 | Payment amount not disclosed | Yes |
 | 13 | Unreliable payment (percentage/views) | No |
+| 14 | Unrealistic expectations | No |
+| 15 | Currency not specified | Yes |
+| 16 | Per-project rate, not monthly/weekly rate | No |
+| 17 | Game currency/crypto payment not allowed | No |
+| 18 | Minimum budget requirement | Yes |
+| 19 | Two separate jobs in one post | No |
 
 "Other" opens a modal for a custom note. The hold dropdown only shows holdable reasons.
 
@@ -125,7 +134,8 @@ Users can check their balance with `/vj_tokens`.
 - Blocked at 3 strikes (configurable via `max_strikes`)
 - Blocked users see an error when clicking Submit
 - Staff can check strikes with `/vj_config check_strikes @user`
-- Staff can reset strikes with `/vj_config reset_strikes @user`
+- Staff can reset strikes to 0 with `/vj_config reset_strikes @user`
+- Staff can decrement by a specific amount with `/vj_config reset_strikes @user amount:N`
 
 ---
 
@@ -136,7 +146,7 @@ Users can check their balance with `/vj_tokens`.
 | `/vj_dashboard` | 0 | Open the configuration dashboard ([reference](../dashboards/vj-dashboard.md)) |
 | `/vj_config deploy_button` | 0 | Deploy the submit button to the info channel |
 | `/vj_config check_strikes @user` | 0 | Check a user's strike count |
-| `/vj_config reset_strikes @user` | 0 | Reset a user's strikes to 0 |
+| `/vj_config reset_strikes @user [amount:N]` | 0 | Reset a user's strikes to 0, or decrement by N if `amount` is provided |
 | `/vj_stats [time_range] [reviewer]` | 0 | View reviewer performance stats |
 | `/vj_tokens` | any | Check your token balance |
 
@@ -145,7 +155,7 @@ Users can check their balance with `/vj_tokens`.
 ## Common Scenarios
 
 ### Legitimate job with minor issues
-Put it on Hold with the relevant reason. User gets a DM asking for clarification. Once they respond, approve or reject.
+Put it on Hold with the relevant reason. User gets a DM asking for clarification and is directed to open a ticket. Once they respond, approve or reject. If you don't hear back after 48 hours, use the Withdraw button to cancel without issuing a strike.
 
 ### Obvious scam
 Reject with "Suspected scam". User gets a strike. Auto-validation catches most of these but some slip through.
