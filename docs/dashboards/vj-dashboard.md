@@ -14,6 +14,7 @@ Opens an ephemeral interactive message with navigation buttons for each panel.
 | Review channel | Staff review queue |
 | Forum channel | Where approved jobs get published |
 | Log channel | Activity logs |
+| Report channel | Optional destination for member reports from live VJ posts. If unset, reports fall back to the Log channel, then the Review channel |
 
 ### Roles
 

@@ -6,6 +6,8 @@ Practical guide for staff reviewing job submissions. For the full system overvie
 
 Review cards show up in the review channel. Read the job details, click one of the action buttons. The bot handles DMs, forum publishing, and status tracking.
 
+Members can also report live VJ posts from the forum. Those reports show up in the configured VJ Report channel, or fall back to the Log channel and then Review channel.
+
 | Button | When to use |
 |--------|-------------|
 | **Approve** | Job is legit, well-written, reasonable budget, acceptable payment method |
@@ -70,7 +72,7 @@ Hold only shows the holdable reasons. "Other" opens a text box for a custom note
 
 **Approve:**
 
-- Job publishes to the forum immediately with Apply/Close buttons
+- Job publishes to the forum immediately with Apply, Close, and Report buttons
 - User gets a DM with the forum link (and token balance if monetization is on)
 - Review card turns green
 - 1 token consumed if monetization is enabled (unless user has [Hiring Pass](../features/token-system.md#hiring-pass))
@@ -94,6 +96,22 @@ Hold only shows the holdable reasons. "Other" opens a text box for a custom note
 - User gets a DM letting them know the submission was withdrawn and they need to re-submit
 - Intake thread is archived
 - Review card turns gray
+
+## Member reports
+
+Published VJ posts have a **Report** button. Reporters can select multiple reasons, add required details, optionally include evidence links, and optionally upload screenshots. Staff alerts include the reporter, original poster, job ID, thread link, selected reasons, details, and evidence.
+
+Common report reasons:
+
+- Middleman / agency concern
+- Scam / suspicious behavior
+- Payment issue
+- Misleading or inaccurate post
+- Unsafe / abusive behavior
+- Spam / low-quality / not a real job
+- Other
+
+Each user can report a given job once. The original submitter cannot report their own job.
 
 ## Privacy
 

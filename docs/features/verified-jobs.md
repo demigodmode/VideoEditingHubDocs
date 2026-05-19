@@ -1,6 +1,6 @@
 # Verified Jobs
 
-Moderated job board for paid video editing work. Users submit jobs, staff reviews them, and approved jobs get published to a forum with apply/close buttons.
+Moderated job board for paid video editing work. Users submit jobs, staff reviews them, and approved jobs get published to a forum with apply, close, and report buttons.
 
 This page covers the full system end to end. If you're a reviewer, the [Review Guide](../guides/review-guide.md) is the quick-reference version focused on what you need day to day. For configuration, see the [VJ Dashboard](../dashboards/vj-dashboard.md) reference.
 
@@ -115,6 +115,27 @@ The thread gets auto-tagged with the matching forum tag based on job type.
 
 - **Apply** - user applies to the job. Requires configured applicant role(s) if set. Tracked in the database so nobody can apply twice. Applicant count shown in footer
 - **Close** - only the job submitter can use this. Archives and locks the thread
+- **Report** - lets members flag a live job for staff review. The original submitter cannot report their own post. Each user can report a specific job once
+
+### Reporting a live job
+
+When someone clicks **Report**, they first select one or more reasons:
+
+- Middleman / agency concern
+- Scam / suspicious behavior
+- Payment issue
+- Misleading or inaccurate post
+- Unsafe / abusive behavior
+- Spam / low-quality / not a real job
+- Other
+
+After choosing reasons, the reporter fills out a modal:
+
+1. **What happened?** - required
+2. **Evidence links** - optional, for message links, Google Drive links, image links, etc.
+3. **Upload screenshots** - optional file upload
+
+The staff alert includes the reporter, original poster, job ID, thread link, selected reasons, details, links, uploaded evidence filenames/files, and timestamp. Reports go to the configured Report channel if set, otherwise the VJ Log channel, otherwise the Review channel.
 
 ---
 
@@ -183,6 +204,7 @@ Auto-validation can have false positives. Check what triggered it (crypto keywor
 |---------|-----|
 | Submit button not working | Check system is enabled ([Status panel](../dashboards/vj-dashboard.md#status)). Check user strikes. Check cooldown settings |
 | Review buttons not responding | Check your permissions. Someone else may have already reviewed it. Check log channel |
+| Report button not sending alerts | Check Report channel config in `/vj_dashboard`. If unset, check Log channel, then Review channel. Confirm bot can send embeds/files there |
 | Forum post not created after approval | Check forum channel is configured (Status panel). Check bot permissions in the forum. Check logs |
 | Images not showing | They auto-embed from URLs, give it a few seconds. If user skipped upload, the fallback notice handles it |
 | Wrong stats in /vj_stats | Stats are per-reviewer and real-time. Check if you're filtering by timeframe |
