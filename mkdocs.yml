@@ -44,6 +44,7 @@ nav:
   - Guides:
       - Modmail Snippets: guides/modmail-snippets.md
       - VJ Review Guide: guides/review-guide.md
+      - VJ Hold vs Reject Guide: guides/hold-vs-reject.md
   - Verified Jobs:
       - Overview & Workflow: features/verified-jobs.md
       - Token System: features/token-system.md

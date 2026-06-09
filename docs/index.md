@@ -6,6 +6,7 @@ Staff documentation for the Video Editing Hub Discord bot.
 
 - [Modmail Snippets](guides/modmail-snippets.md) - pre-written responses for common Modmail tickets
 - [VJ Review Guide](guides/review-guide.md) - practical guide for reviewing job submissions
+- [VJ Hold vs Reject Guide](guides/hold-vs-reject.md) - quick staff guide for deciding when to hold, reject, or withdraw
 
 ## Verified Jobs
 

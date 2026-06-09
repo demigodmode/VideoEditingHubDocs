@@ -1,6 +1,6 @@
 # VJ Review Guide
 
-Practical guide for staff reviewing job submissions. For the full system overview including submission flow, forum publishing, and troubleshooting, see [Verified Jobs](../features/verified-jobs.md).
+Practical guide for staff reviewing job submissions. For the full system overview including submission flow, forum publishing, and troubleshooting, see [Verified Jobs](../features/verified-jobs.md). For the staff decision guide, see [VJ Hold vs Reject Guide](hold-vs-reject.md).
 
 ## The basics
 
@@ -10,9 +10,9 @@ Members can also report live VJ posts from the forum. Those reports show up in t
 
 | Button | When to use |
 |--------|-------------|
-| **Approve** | Job is legit, well-written, reasonable budget, acceptable payment method |
-| **Reject** | Scam, budget too low, bad payment method, rule violation, duplicate |
-| **Hold** | Need more info, want to clarify something, want a second opinion |
+| **Approve** | Job is legit, complete enough to publish, reasonable budget, acceptable payment method |
+| **Hold** | Something fixable is missing, unclear, or needs staff editing before approval |
+| **Reject** | Job is not allowed, scammy, duplicate, unsuitable for VJ, or cannot be fixed by clarification |
 | **Withdraw** | Only available after holding. Use when the submitter doesn't respond — cancels with no strike |
 
 ## Green flags
@@ -29,40 +29,47 @@ Members can also report live VJ posts from the forum. Those reports show up in t
 - Asks for upfront fees from applicants
 - Unrealistic budget (too high or suspiciously low)
 - Vague "DM me for details" descriptions
-- Crypto, gift cards, or non-standard payment
+- Gift cards or non-standard payment
 - "ASAP" with promises of big money
+
+!!! note "Crypto submissions"
+    Crypto payment is already auto-declined by the bot in normal cases, so staff usually should not need to reject those manually.
 
 ## Rejection reasons
 
 When you reject or hold, you pick one or more reasons from a dropdown. All selected reasons show up as a bullet list in the submitter's DM.
 
-| # | Reason | Can hold? |
-|---|--------|-----------|
-| 1 | Missing client/agency disclosure | Yes |
-| 2 | Budget missing or unclear | Yes |
-| 3 | Payment terms missing | Yes |
-| 4 | Deliverables too vague | Yes |
-| 5 | Timeline missing | Yes |
-| 6 | Requirements unrealistic | No |
-| 7 | References/examples missing | Yes |
-| 8 | Suspected scam | No |
-| 9 | Wrong channel / not a paid job | No |
-| 10 | Other (see note) | Yes |
-| 11 | Monthly/weekly rate instead of per-project | Yes |
-| 12 | Payment amount not disclosed | Yes |
-| 13 | Unreliable payment (percentage/views) | No |
-| 14 | Unrealistic expectations | No |
-| 15 | Currency not specified | Yes |
-| 16 | Per-project rate, not monthly/weekly rate | No |
-| 17 | Game currency/crypto payment not allowed | No |
-| 18 | Minimum budget requirement | Yes |
-| 19 | Two separate jobs in one post | No |
+| Reason | Can hold? |
+|--------|-----------|
+| Missing client/agency disclosure | Yes |
+| Budget missing or unclear | Yes |
+| Deliverables too vague | Yes |
+| Timeline missing | Yes |
+| Requirements unrealistic | No |
+| References/examples missing | Yes |
+| Suspected scam | No |
+| Wrong channel / not a paid job | No |
+| Other (see note) | Yes |
+| Monthly/weekly rate instead of per-project | Yes |
+| Payment amount not disclosed | Yes |
+| Unreliable payment (percentage/views) | No |
+| Unrealistic expectations | No |
+| Currency not specified | Yes |
+| Per-project rate, not monthly/weekly rate | No |
+| Game currency/crypto payment not allowed | No |
+| Minimum budget requirement | Yes |
+| Two separate jobs in one post | No |
 
 Hold only shows the holdable reasons. "Other" opens a text box for a custom note.
 
+## Hold vs Reject
+
+The short version: **Hold fixable posts. Reject posts that should not be allowed through.**
+
+For the full staff-facing decision guide, including editable held-submission fields and examples, see [VJ Hold vs Reject Guide](hold-vs-reject.md).
+
 ## Review tips
 
-- Use Hold over Reject when something is fixable. Holds don't add strikes. If the user doesn't respond after ~48h, Withdraw to clean it up
 - You can select multiple rejection/hold reasons at once — all of them show up in the submitter's DM
 - Be consistent. Discuss edge cases with the team so budget thresholds and standards stay fair
 - Aim for 24h turnaround. Faster reviews mean better experience for posters

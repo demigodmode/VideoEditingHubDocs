@@ -61,41 +61,54 @@ Validated submissions appear in the review channel as embed cards.
 |--------|-------------|
 | **Approve** | Publishes to forum, sends approval DM, consumes 1 token if monetization is on and user has no Hiring Pass |
 | **Reject** | Adds 1 strike, sends rejection DM with reason(s). User blocked at 3 strikes (configurable) |
-| **Hold** | Pauses for clarification, sends hold DM with ticket instructions. No strike. Once held, the Hold button is replaced by Withdraw |
+| **Hold** | Pauses for clarification, sends hold DM with ticket instructions. No strike. Staff can edit fixable fields while held. Once held, the Hold button is replaced by Withdraw |
 | **Withdraw** | Only appears after a hold. Cancels the submission with no strike — use when you don't hear back from the submitter. Sends the submitter a DM and archives the intake thread |
 | **Mark as Agency** | Only shows when agency-only enforcement is on. Assigns agency role to the submitter |
 
 Only one reviewer can claim a submission. If someone else already acted on it, the button tells you.
 
-For a practical breakdown of when to approve, reject, or hold (with green/red flags and tips), see the [Review Guide](../guides/review-guide.md).
+For a practical breakdown of when to hold or reject a submission, see the [VJ Hold vs Reject Guide](../guides/hold-vs-reject.md). For the broader review workflow, see the [Review Guide](../guides/review-guide.md).
 
 ### Rejection and hold reasons
 
 Staff can select multiple reasons at once. All selected reasons show up as a bullet list in the submitter's DM.
 
-| # | Reason | Holdable? |
-|---|--------|-----------|
-| 1 | Missing client/agency disclosure | Yes |
-| 2 | Budget missing or unclear | Yes |
-| 3 | Payment terms missing | Yes |
-| 4 | Deliverables too vague | Yes |
-| 5 | Timeline missing | Yes |
-| 6 | Requirements unrealistic | No |
-| 7 | References/examples missing | Yes |
-| 8 | Suspected scam | No |
-| 9 | Wrong channel / not a paid job | No |
-| 10 | Other (see note) | Yes |
-| 11 | Monthly/weekly rate instead of per-project | Yes |
-| 12 | Payment amount not disclosed | Yes |
-| 13 | Unreliable payment (percentage/views) | No |
-| 14 | Unrealistic expectations | No |
-| 15 | Currency not specified | Yes |
-| 16 | Per-project rate, not monthly/weekly rate | No |
-| 17 | Game currency/crypto payment not allowed | No |
-| 18 | Minimum budget requirement | Yes |
-| 19 | Two separate jobs in one post | No |
+| Reason | Holdable? |
+|--------|-----------|
+| Missing client/agency disclosure | Yes |
+| Budget missing or unclear | Yes |
+| Deliverables too vague | Yes |
+| Timeline missing | Yes |
+| Requirements unrealistic | No |
+| References/examples missing | Yes |
+| Suspected scam | No |
+| Wrong channel / not a paid job | No |
+| Other (see note) | Yes |
+| Monthly/weekly rate instead of per-project | Yes |
+| Payment amount not disclosed | Yes |
+| Unreliable payment (percentage/views) | No |
+| Unrealistic expectations | No |
+| Currency not specified | Yes |
+| Per-project rate, not monthly/weekly rate | No |
+| Game currency/crypto payment not allowed | No |
+| Minimum budget requirement | Yes |
+| Two separate jobs in one post | No |
 
 "Other" opens a modal for a custom note. The hold dropdown only shows holdable reasons.
+
+### Editing held submissions
+
+Held submissions can be edited by staff before approval. Use this when the job is basically valid, but needs clarification or cleanup instead of a rejection.
+
+Editable fields while held:
+
+- Description / job details
+- Budget
+- Payment method
+- Reference links
+- Additional notes / clarification
+
+Payment terms are not required. Crypto payment submissions are normally auto-declined by the bot before staff review. For staff decision guidance, see [VJ Hold vs Reject Guide](../guides/hold-vs-reject.md).
 
 ---
 
@@ -176,7 +189,7 @@ Users can check their balance with `/vj_tokens`.
 ## Common Scenarios
 
 ### Legitimate job with minor issues
-Put it on Hold with the relevant reason. User gets a DM asking for clarification and is directed to open a ticket. Once they respond, approve or reject. If you don't hear back after 48 hours, use the Withdraw button to cancel without issuing a strike.
+Put it on Hold with the relevant reason. User gets a DM asking for clarification and is directed to open a ticket. Once they respond, staff can edit the held submission if needed, then approve or reject. If you don't hear back after 48 hours, use the Withdraw button to cancel without issuing a strike.
 
 ### Obvious scam
 Reject with "Suspected scam". User gets a strike. Auto-validation catches most of these but some slip through.
