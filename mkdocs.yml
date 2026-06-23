@@ -1,6 +1,6 @@
 site_name: Video Editing Hub Staff Docs
 site_description: Staff documentation for the Video Editing Hub Discord server
-site_url: https://video-editing-hub-docs.readthedocs.io
+site_url: https://videoeditinghubdocs.readthedocs.io/en/latest
 
 theme:
   name: material
