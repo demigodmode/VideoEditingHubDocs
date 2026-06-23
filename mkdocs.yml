@@ -39,6 +39,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Privacy Policy: privacy.md
   - Getting Started:
       - Staff Roles & Permissions: getting-started/permissions.md
   - Guides:
