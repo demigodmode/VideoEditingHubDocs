@@ -42,8 +42,11 @@ nav:
   - Privacy Policy: privacy.md
   - Getting Started:
       - Staff Roles & Permissions: getting-started/permissions.md
+  - Modmail:
+      - Overview: features/modmail.md
+      - Ticket Commands: guides/ticket-commands.md
+      - Snippets: guides/modmail-snippets.md
   - Guides:
-      - Modmail Snippets: guides/modmail-snippets.md
       - VJ Review Guide: guides/review-guide.md
       - VJ Hold vs Reject Guide: guides/hold-vs-reject.md
   - Verified Jobs:
