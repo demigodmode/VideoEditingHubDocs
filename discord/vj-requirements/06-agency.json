@@ -6,19 +6,8 @@
       "accent_color": 3329330,
       "components": [
         {
-          "type": 9,
-          "components": [
-            {
-              "type": 10,
-              "content": "# 🏢 Posting as an Agency"
-            }
-          ],
-          "accessory": {
-            "type": 11,
-            "media": {
-              "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-logo.png"
-            }
-          }
+          "type": 10,
+          "content": "# 🏢 Posting as an Agency"
         },
         {
           "type": 14,
@@ -45,7 +34,7 @@
         },
         {
           "type": 10,
-          "content": "-# **Video Editing Hub**  ·  Posting as an Agency  ·  Last revised 28 Aug 2026"
+          "content": "-# **Video Editing Hub**  ·  Posting as an Agency  ·  Last revised <t:1787953440:D>"
         }
       ]
     }

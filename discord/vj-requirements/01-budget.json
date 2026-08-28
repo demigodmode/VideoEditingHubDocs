@@ -6,29 +6,8 @@
       "accent_color": 15255626,
       "components": [
         {
-          "type": 12,
-          "items": [
-            {
-              "media": {
-                "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-banner.png"
-              }
-            }
-          ]
-        },
-        {
-          "type": 9,
-          "components": [
-            {
-              "type": 10,
-              "content": "# 💰 Budget Requirements"
-            }
-          ],
-          "accessory": {
-            "type": 11,
-            "media": {
-              "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-logo.png"
-            }
-          }
+          "type": 10,
+          "content": "# 💰 Budget Requirements"
         },
         {
           "type": 14,
@@ -46,7 +25,7 @@
         },
         {
           "type": 10,
-          "content": "-# **Video Editing Hub**  ·  Budget Requirements  ·  Last revised 28 Aug 2026"
+          "content": "-# **Video Editing Hub**  ·  Budget Requirements  ·  Last revised <t:1787953440:D>"
         }
       ]
     }

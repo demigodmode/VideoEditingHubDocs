@@ -6,19 +6,8 @@
       "accent_color": 15158332,
       "components": [
         {
-          "type": 9,
-          "components": [
-            {
-              "type": 10,
-              "content": "# ⛔ Instant Bans"
-            }
-          ],
-          "accessory": {
-            "type": 11,
-            "media": {
-              "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-logo.png"
-            }
-          }
+          "type": 10,
+          "content": "# ⛔ Instant Bans"
         },
         {
           "type": 14,
@@ -36,7 +25,7 @@
         },
         {
           "type": 10,
-          "content": "-# **Video Editing Hub**  ·  Instant Bans  ·  Last revised 28 Aug 2026"
+          "content": "-# **Video Editing Hub**  ·  Instant Bans  ·  Last revised <t:1787953440:D>"
         }
       ]
     }

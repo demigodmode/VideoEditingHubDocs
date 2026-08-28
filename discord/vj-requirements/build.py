@@ -3,27 +3,17 @@
 
 Edit the text below, run `python3 build.py`, then publish with send.sh (locally)
 or the GitHub Action. Each message becomes a Components V2 payload: one Container
-(accent bar = old embed color) with a title Section (logo thumbnail), a divider,
-the body split by Separator dividers, and a branded footer. The first post also
-carries the banner as a Media Gallery header.
+(accent bar = old embed color) with a title, a divider under it, the body split by
+Separator dividers, and a small branded footer.
 
 Split a body into blocks with a line containing only:  [[SEP]]
 """
-import json, os
+import json, os, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-# Bump this when you revise the content; it shows in every footer.
-REVISED = "28 Aug 2026"
-
-# Where Discord fetches the images from. Public GitHub raw URL by default (main).
-# For a pre-merge test, override: RAW_BASE=.../<branch>/discord/vj-requirements/assets
-RAW_BASE = os.getenv(
-    "RAW_BASE",
-    "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets",
-)
-LOGO_URL = f"{RAW_BASE}/server-logo.png"
-BANNER_URL = f"{RAW_BASE}/server-banner.png"
+# Publish time as a localized Discord timestamp (<t:unix:D>) shown in every footer.
+REVISED_TS = int(time.time())
 
 def color(hexstr):
     return int(hexstr.lstrip("#"), 16)
@@ -142,34 +132,18 @@ These skip the warning and go straight to a ban:
 > - **AI-generated projects** where most of the content (script, footage, voice) is AI-made with minimal human input"""),
 ]
 
-def build_one(hexstr, title, footer_label, body, banner=False):
-    comps = []
-    if banner:
-        comps.append({"type": 12, "items": [{"media": {"url": BANNER_URL}}]})  # media gallery header
-    comps.append({                                                             # title + logo thumbnail
-        "type": 9,
-        "components": [{"type": 10, "content": title}],
-        "accessory": {"type": 11, "media": {"url": LOGO_URL}},
-    })
-    comps.append(sep())                                                        # divider after title
-    blocks = [b.strip("\n") for b in body.split("[[SEP]]")]
-    for i, b in enumerate(blocks):
+def build_one(hexstr, title, footer_label, body):
+    comps = [{"type": 10, "content": title}, sep()]                # title, then divider under it
+    for b in [x.strip("\n") for x in body.split("[[SEP]]")]:
         comps.append({"type": 10, "content": b})
-        if i != len(blocks) - 1:
-            comps.append(sep())
-    comps.append(sep())                                                        # divider before footer
-    comps.append({"type": 10, "content": f"-# **Video Editing Hub**  ·  {footer_label}  ·  Last revised {REVISED}"})
+        comps.append(sep())                                        # section dividers + divider before footer
+    comps.append({"type": 10, "content": f"-# **Video Editing Hub**  ·  {footer_label}  ·  Last revised <t:{REVISED_TS}:D>"})
     return {"flags": 32768, "components": [{"type": 17, "accent_color": color(hexstr), "components": comps}]}
 
 def main():
     for num, name, hexstr, title, footer_label, body in MESSAGES:
-        payload = build_one(hexstr, title, footer_label, body, banner=(num == "01"))
-        chars = 0
-        for comp in payload["components"][0]["components"]:
-            if comp["type"] == 10:
-                chars += len(comp["content"])
-            elif comp["type"] == 9:
-                chars += sum(len(c["content"]) for c in comp["components"])
+        payload = build_one(hexstr, title, footer_label, body)
+        chars = sum(len(c["content"]) for c in payload["components"][0]["components"] if c["type"] == 10)
         with open(os.path.join(HERE, f"{num}-{name}.json"), "w") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
         print(f"{num}-{name}.json  {chars} chars" + ("  ⚠️OVER4000" if chars > 4000 else ""))
