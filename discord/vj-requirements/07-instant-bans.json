@@ -6,8 +6,37 @@
       "accent_color": 15158332,
       "components": [
         {
+          "type": 9,
+          "components": [
+            {
+              "type": 10,
+              "content": "# ⛔ Instant Bans"
+            }
+          ],
+          "accessory": {
+            "type": 11,
+            "media": {
+              "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-logo.png"
+            }
+          }
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
           "type": 10,
-          "content": "# ⛔ Instant Bans\n\nThese skip the warning and go straight to a ban:\n> - **Middlemanning / dropshipping** — you must be the real client or a contracted agency\n> - **Sending applicants to an external Discord** to apply, submit work, or get details\n> - **AI-generated projects** where most of the content (script, footage, voice) is AI-made with minimal human input"
+          "content": "These skip the warning and go straight to a ban:\n> - **Middlemanning / dropshipping** — you must be the real client or a contracted agency\n> - **Sending applicants to an external Discord** to apply, submit work, or get details\n> - **AI-generated projects** where most of the content (script, footage, voice) is AI-made with minimal human input"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Instant Bans  ·  Last revised 28 Aug 2026"
         }
       ]
     }

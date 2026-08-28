@@ -6,17 +6,46 @@
       "accent_color": 2003199,
       "components": [
         {
-          "type": 10,
-          "content": "# 📝 Writing Your Post\n\n\"DM me for details\" isn't a job post. Give applicants enough to decide before they reach out. Vague posts get rejected."
+          "type": 9,
+          "components": [
+            {
+              "type": 10,
+              "content": "# 📝 Writing Your Post"
+            }
+          ],
+          "accessory": {
+            "type": 11,
+            "media": {
+              "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-logo.png"
+            }
+          }
         },
         {
           "type": 14,
           "divider": true,
-          "spacing": 1
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "\"DM me for details\" isn't a job post. Give applicants enough to decide before they reach out. Vague posts get rejected."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
         },
         {
           "type": 10,
           "content": "### 🎬 Video / Clipping / VFX\n> - Content type (YouTube, TikTok, podcast, commercial, etc.)\n> - Editing style, with link examples — not just \"good editing\"\n> - Rough length and turnaround time\n> - Any software or delivery-format needs\n\n### 🎨 Thumbnails / Design\n> - Quantity and format (thumbnails, banners, channel art, etc.)\n> - Dimensions or platform specs if relevant\n> - Style references, or the colors/mood/vibe you want\n> - One final version or variations"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Writing Your Post  ·  Last revised 28 Aug 2026"
         }
       ]
     }

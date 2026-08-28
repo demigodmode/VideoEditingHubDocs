@@ -6,8 +6,37 @@
       "accent_color": 10181046,
       "components": [
         {
+          "type": 9,
+          "components": [
+            {
+              "type": 10,
+              "content": "# 🧪 Sample Work Policy"
+            }
+          ],
+          "accessory": {
+            "type": 11,
+            "media": {
+              "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-logo.png"
+            }
+          }
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
           "type": 10,
-          "content": "# 🧪 Sample Work Policy\n\nSample work must be **paid**. Minimum **$10**, max **30 seconds** of footage.\n\n> - Meets your brief → pay\n> - Close but needs changes → give feedback, pay after revision\n> - Doesn't match the brief → don't pay\n\n**Free samples or unpaid trials aren't allowed. Those posts get rejected.**"
+          "content": "Sample work must be **paid**. Minimum **$10**, max **30 seconds** of footage.\n\n> - Meets your brief → pay\n> - Close but needs changes → give feedback, pay after revision\n> - Doesn't match the brief → don't pay\n\n**Free samples or unpaid trials aren't allowed. Those posts get rejected.**"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Sample Work Policy  ·  Last revised 28 Aug 2026"
         }
       ]
     }

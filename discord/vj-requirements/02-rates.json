@@ -6,26 +6,55 @@
       "accent_color": 15255626,
       "components": [
         {
-          "type": 10,
-          "content": "# 💵 Minimum Rates\n\nEach video rate has a **Simple** and an **Advanced** tier (defined at the bottom).\n\n### 🎞️ Video Editing\n→ **Short — up to 1:00** · Simple **$15+** · Advanced **$30+**\n→ **Short — 1:01 to 3:00** · Simple **$30+** · Advanced **$60+**\n→ **Medium — 3:01 to 10:00** · Simple **$40+** · Advanced **$80+**\n→ **Long — 10:01+** · Simple **$60+** · Advanced **$120+** (first 10 min)\n> - Then **+$10/min** (Simple) or **+$20/min** (Advanced) past 10:00."
+          "type": 9,
+          "components": [
+            {
+              "type": 10,
+              "content": "# 💵 Minimum Rates"
+            }
+          ],
+          "accessory": {
+            "type": 11,
+            "media": {
+              "url": "https://raw.githubusercontent.com/demigodmode/VideoEditingHubDocs/main/discord/vj-requirements/assets/server-logo.png"
+            }
+          }
         },
         {
           "type": 14,
           "divider": true,
-          "spacing": 1
+          "spacing": 2
         },
         {
           "type": 10,
-          "content": "### ✂️ Clipping\n-# Handing over a full stream/VOD to find and cut the best moments. (Pricing being finalized — see staff.)\n\n### 📷 Thumbnails\n> - **$10+** each\n\n### ✍️ Scriptwriting\n> - **$10+** per script (up to 500 words), then **+$10** per 500 words"
+          "content": "Each video rate has a **Simple** and an **Advanced** tier — see the definitions at the bottom.\n\n➕ **Asking for more than one job in a single post?** Add the minimums together. For example, a script **and** a long-form video has to meet the scriptwriting minimum **plus** the long-form minimum.\n\n### 🎞️ Video Editing\n\n**Short — up to 1:00**\n> Simple: **$20+**\n> Advanced: **$40+**\n\n**Short — 1:01 to 3:00**\n> Simple: **$30+**\n> Advanced: **$60+**\n\n**Medium — 3:01 to 10:00**\n> Simple: **$40+**\n> Advanced: **$80+**\n\n**Long — 10:01 and up**\n> Simple: **$60+** for the first 10 min, then **+$10/min**\n> Advanced: **$120+** for the first 10 min, then **+$20/min**"
         },
         {
           "type": 14,
           "divider": true,
-          "spacing": 1
+          "spacing": 2
         },
         {
           "type": 10,
-          "content": "### Simple vs Advanced\n-# **Simple** — cuts/trims, subtitles, media sourcing, basic color grading, audio fixes, simple pan/zoom. Talking-head videos, simple shorts, podcast clips, casual vlogs.\n-# **Advanced** — complex grading, motion graphics/animation, sound design, fast-paced or multi-cam, VFX, Blender/3D. Documentaries, trailers, cinematic edits, brand ads.\n\n-# A per-second/word rate must still clear the per-project minimum at your **longest** job. e.g. \"$25 per 60s, up to 3:00\" is a 3-minute video → **$30+**."
+          "content": "### ✂️ Clipping\n**$20+** per clip\n-# One clip cut from a stream/VOD. If you also want them edited into finished shorts, that's short-form editing — use the rates above.\n\n### 📷 Thumbnails\n**$10+** each\n\n### ✍️ Scriptwriting\n**$10+** per script (up to 500 words), then **+$10** per 500 words"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "### Simple vs Advanced\n\n**Simple** — cuts/trims, subtitles, media sourcing, basic color grading, audio fixes, simple pan/zoom.\nExamples: talking-head videos, simple shorts, podcast clips, casual vlogs.\n\n**Advanced** — complex grading, motion graphics/animation, sound design, fast-paced or multi-cam, VFX, Blender/3D.\nExamples: documentaries, trailers, cinematic edits, brand ads.\n\n⚠️ A per-second or per-word rate still has to clear the per-project minimum at your **longest** job.\nExample: \"$25 per 60s, up to 3:00\" is a 3-minute video, so **$30+**."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Minimum Rates  ·  Last revised 28 Aug 2026"
         }
       ]
     }
