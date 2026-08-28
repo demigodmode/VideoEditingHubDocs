@@ -1,64 +1,79 @@
-# Modmail Snippets
+# Modmail snippets
 
-Pre-written responses for common Modmail tickets. Each snippet has a short command and an anonymous variant.
+Pre-written responses for common Modmail tickets, so you're not retyping the same answer every time.
 
-`?s` is shorthand for `?snippet`, `?as` is shorthand for `?asnippet` (anonymous, hides your name).
+Send one with `!s <name>` in the ticket channel, or `/ticket snippet <name>` (the name autocompletes as you type). Snippets and close reasons are both managed from the ticket dashboard, so this list can change; see [Ticket Commands](ticket-commands.md) for the full command reference.
 
-## report
+Whether a snippet posts with your name on it or as the server ("anonymous") is a property of the snippet itself, set when it's created or edited in the dashboard. It's not something you pick at send time. All of the snippets below currently post named.
 
-Use when someone needs to report a scammer or rule-breaking user. Gather the evidence, then hand off to Admin.
+## Snippets
 
-**Command:** `?s report` or `?as report`
+### hi
+
+Greeting when someone opens a ticket without saying why yet.
+
+> Hello, thanks for reaching VEH staff. How can we help you?
+
+### report
+
+For someone who wants to report a scammer or rule-breaker. Gather the evidence, then hand off to Admin.
 
 > To report a scammer or user please provide their Discord ID and any screenshots/video evidence of the scam or offense.
 
-## discordid
+### discordid
 
-Use when the person reporting doesn't know how to find a Discord User ID.
+For when the person reporting doesn't know how to find a Discord user ID.
 
-**Command:** `?s discordid` or `?as discordid`
-
-> In order to view and copy the Discord ID of a user you need to turn on developer mode.
+> In order to view and copy the Discord ID of a user you need to turn in developer mode. Please refer to the following to turn yours on.
 >
-> **Mobile:**
-> iOS: Settings > Privacy & Security > Developer Mode. Enable the toggle.
-> Android: Settings > Advanced > Developer Mode. Enable the toggle.
+> For Mobile:
+> On the iOS device, open Settings > Privacy & Security > Developer Mode. Enable the toggle.
 >
-> **PC:**
-> Discord Settings (gear icon) > Advanced (under APP SETTINGS) > Developer Mode toggle.
+> For PC:
+> Launch the Discord application > Click the gear icon to access Discord Settings > In the left pane, scroll down and select the Advanced category under the APP SETTINGS section. > In the right pane, toggle on the button for Developer Mode.
 
-## editorwork
+### warnorban
 
-Use when an editor messages looking for work. This comes up a lot, roughly a ticket a day. Modmail isn't meant for this but people use it that way.
+For a scam case where the reporter needs to choose how far to take it.
 
-**Command:** `?s editorwork` or `?as editorwork`
-
-> You can post in the #self-advertise or check out the #post-paid-ad or #post-free-ad.
+> You have 2 options here:
+> - We can leave a warning with a 24h notice to respond to you and pay you
+> - We moved ahead with banning them for scamming
 >
-> Please review the modmail-info channel on the proper uses for Modmail.
+> Upto you to decide!
 
-## hi
+### reminder
 
-Use as a greeting when someone opens a ticket without stating their reason.
+Nudge on a ticket that's gone quiet, with a 24h warning before closing.
 
-**Command:** `?s hi` or `?as hi`
+> We haven't heard from you in some time. If we don't receive a response within next 24h, we will close this ticket.
 
-> Hello. Thank you for reaching Modmail. How can we help you today?
+### morehelp
 
-## morehelp
+Before closing, to check they don't need anything else.
 
-Use at the end of a ticket before closing, to make sure they don't need anything else.
+> Is there anything else we can help you with?
 
-**Command:** `?s morehelp` or `?as morehelp`
+### partner
 
-> Is there anything else we can assist you with?
+For someone asking about a server partnership.
 
-## client
+> Thank you for your interest in being a server partner here at Video Editing Hub Discord Server. Please give us a link to your Discord and what your visions are for the partnership.
 
-Use when a client messages looking for an editor. Less common than editors messaging, but it happens.
+### sponsor
 
-**Command:** `?s client` or `?as client`
+For a sponsorship inquiry.
 
-> You can post on #post-paid-ad or #post-free-ad depending on your budget.
->
-> Please review the modmail-info channel on the proper uses for Modmail.
+> Hello! Thank you for your interest in sponsorship for Video Editing Hub Discord Server. Please send us any information you'd like us to see and what your vision is for the sponsorship!
+
+## Close reasons
+
+These show up as autocomplete options on `/ticket close` and `/ticket schedule_close`. They're just labels stored on the closed ticket for the log, also managed from the dashboard.
+
+- Issue Resolved
+- Issue Resolved - No action needed
+- Unresolved / No Action - User unresponsive
+
+---
+
+For how tickets work end to end, see the [Modmail overview](../features/modmail.md).
