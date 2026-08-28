@@ -1,0 +1,42 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 3329330,
+      "components": [
+        {
+          "type": 10,
+          "content": "# 🏢 Posting as an Agency"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "When you submit, the bot asks if you're an agency. Select yes and your agency name is collected separately — no need to write it in the description. Once tagged, future submissions post under that agency automatically."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "### Put in your description\n> Context about the client or project so editors know who and what they're working with. \"Agency posting for a gaming channel\" beats leaving it blank.\n\n### No middlemanning\n> Being an agency means you're contracted to deliver the work. Just connecting clients with editors for a cut is a ban (see **Instant bans**)."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Posting as an Agency  ·  Last revised <t:1787953440:D>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 15255626,
+      "components": [
+        {
+          "type": 10,
+          "content": "# 💰 Budget Requirements"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "Include your **currency**. Minimums below are in **USD**.\n\nYour budget must be a specific amount or clear range, stated **per project** — not per week or month.\n> - Posting a range (e.g. $50–$100)? The **lowest** figure must meet the minimum.\n> - Weekly/monthly rates or \"retainers\" get rejected.\n\n⚠️ Rates go by the video's **actual length**, not the platform or label. A YouTube Short, Reel, or TikTok is judged by runtime like anything else. **If lengths vary, we use the longest one.**\n\n-# Minimum rates are in the next post."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Budget Requirements  ·  Last revised <t:1787953440:D>"
+        }
+      ]
+    }
+  ]
+}

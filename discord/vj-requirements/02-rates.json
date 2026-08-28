@@ -1,0 +1,51 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 15255626,
+      "components": [
+        {
+          "type": 10,
+          "content": "# 💵 Minimum Rates"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "Each video rate has a **Simple** and an **Advanced** tier — see the definitions at the bottom.\n\n➕ **Asking for more than one job in a single post?** Add the minimums together. For example, a script **and** a long-form video has to meet the scriptwriting minimum **plus** the long-form minimum.\n\n### 🎞️ Video Editing\n\n**Short — up to 1:00**\n> Simple: **$20+**\n> Advanced: **$40+**\n\n**Short — 1:01 to 3:00**\n> Simple: **$30+**\n> Advanced: **$60+**\n\n**Medium — 3:01 to 10:00**\n> Simple: **$40+**\n> Advanced: **$80+**\n\n**Long — 10:01 and up**\n> Simple: **$60+** for the first 10 min, then **+$10/min**\n> Advanced: **$120+** for the first 10 min, then **+$20/min**"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "### ✂️ Clipping\n**$20+** per clip\n-# One clip cut from a stream/VOD. If you also want them edited into finished shorts, that's short-form editing — use the rates above.\n\n### 📷 Thumbnails\n**$10+** each\n\n### ✍️ Scriptwriting\n**$10+** per script (up to 500 words), then **+$10** per 500 words"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "### Simple vs Advanced\n\n**Simple** — cuts/trims, subtitles, media sourcing, basic color grading, audio fixes, simple pan/zoom.\nExamples: talking-head videos, simple shorts, podcast clips, casual vlogs.\n\n**Advanced** — complex grading, motion graphics/animation, sound design, fast-paced or multi-cam, VFX, Blender/3D.\nExamples: documentaries, trailers, cinematic edits, brand ads.\n\n⚠️ A per-second or per-word rate still has to clear the per-project minimum at your **longest** job.\nExample: \"$25 per 60s, up to 3:00\" is a 3-minute video, so **$30+**."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Minimum Rates  ·  Last revised <t:1787953440:D>"
+        }
+      ]
+    }
+  ]
+}

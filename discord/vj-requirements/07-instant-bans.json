@@ -1,0 +1,33 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 15158332,
+      "components": [
+        {
+          "type": 10,
+          "content": "# ⛔ Instant Bans"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "These skip the warning and go straight to a ban:\n> - **Middlemanning / dropshipping** — you must be the real client or a contracted agency\n> - **Sending applicants to an external Discord** to apply, submit work, or get details\n> - **AI-generated projects** where most of the content (script, footage, voice) is AI-made with minimal human input"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Instant Bans  ·  Last revised <t:1787953440:D>"
+        }
+      ]
+    }
+  ]
+}
