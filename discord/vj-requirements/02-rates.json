@@ -1,0 +1,33 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 15255626,
+      "components": [
+        {
+          "type": 10,
+          "content": "# 💵 Minimum Rates\n\nEach video rate has a **Simple** and an **Advanced** tier (defined at the bottom).\n\n### 🎞️ Video Editing\n→ **Short — up to 1:00** · Simple **$15+** · Advanced **$30+**\n→ **Short — 1:01 to 3:00** · Simple **$30+** · Advanced **$60+**\n→ **Medium — 3:01 to 10:00** · Simple **$40+** · Advanced **$80+**\n→ **Long — 10:01+** · Simple **$60+** · Advanced **$120+** (first 10 min)\n> - Then **+$10/min** (Simple) or **+$20/min** (Advanced) past 10:00."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 1
+        },
+        {
+          "type": 10,
+          "content": "### ✂️ Clipping\n-# Handing over a full stream/VOD to find and cut the best moments. (Pricing being finalized — see staff.)\n\n### 📷 Thumbnails\n> - **$10+** each\n\n### ✍️ Scriptwriting\n> - **$10+** per script (up to 500 words), then **+$10** per 500 words"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 1
+        },
+        {
+          "type": 10,
+          "content": "### Simple vs Advanced\n-# **Simple** — cuts/trims, subtitles, media sourcing, basic color grading, audio fixes, simple pan/zoom. Talking-head videos, simple shorts, podcast clips, casual vlogs.\n-# **Advanced** — complex grading, motion graphics/animation, sound design, fast-paced or multi-cam, VFX, Blender/3D. Documentaries, trailers, cinematic edits, brand ads.\n\n-# A per-second/word rate must still clear the per-project minimum at your **longest** job. e.g. \"$25 per 60s, up to 3:00\" is a 3-minute video → **$30+**."
+        }
+      ]
+    }
+  ]
+}

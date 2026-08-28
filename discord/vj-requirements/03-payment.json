@@ -1,0 +1,24 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 15255626,
+      "components": [
+        {
+          "type": 10,
+          "content": "# 💳 Payment Rules\n\nThe amount goes **in your post**, not in DMs. If your budget answer is \"DM me\" or \"we'll discuss\", don't post."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 1
+        },
+        {
+          "type": 10,
+          "content": "### ✅ Accepted\n> PayPal, Stripe, Wise, Revolut, CashApp, Zelle, Venmo, Bank/Wire, UPI\n\n### ❌ Not accepted\n> - Crypto or in-game currency (Robux, V-Bucks, etc.)\n> - Gift cards or vouchers\n> - Revenue share, profit split, or percentage-only\n> - \"Based on views\", \"when I monetize\", \"paid in exposure\"\n\n-# These are unreliable and usually mean editors work for free."
+        }
+      ]
+    }
+  ]
+}
