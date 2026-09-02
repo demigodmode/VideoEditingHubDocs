@@ -9,6 +9,13 @@
 # ids.json. Later runs PATCH that same message in place. If the saved message was
 # deleted, it falls back to posting a fresh one.
 #
+# Forum posts: if the channel's content.py META sets "thread_id", build.py writes
+# meta.json and every PATCH targets that thread. Set IGNORE_THREAD=1 to preview a
+# forum channel's content/button in a normal test channel (skips the thread_id
+# param, since a plain channel has no thread to target). Creating a brand-new
+# forum thread (POST with thread_name) isn't supported — ids.json must already
+# have that file's message id before you publish.
+#
 # The webhook URL is a secret — never commit it. In CI it comes from the channel's
 # WEBHOOK_<CHANNEL> GitHub secret (see the workflow).
 set -euo pipefail
@@ -24,6 +31,13 @@ cd "$CHANNEL_DIR"
 
 IDS=ids.json
 [ -f "$IDS" ] || echo '{}' > "$IDS"
+
+THREAD_ID=""
+if [ -f meta.json ] && [ -z "${IGNORE_THREAD:-}" ]; then
+  THREAD_ID=$(python3 -c "import json;print(json.load(open('meta.json')).get('thread_id') or '')")
+fi
+thread_qs=""
+[ -n "$THREAD_ID" ] && thread_qs="&thread_id=$THREAD_ID"
 
 shopt -s nullglob
 files=("$@")
@@ -42,7 +56,7 @@ publish_file() {
   if [ -n "$mid" ]; then
     resp=$(mktemp)
     code=$(curl -sS -o "$resp" -w '%{http_code}' -X PATCH \
-      "$WEBHOOK_URL/messages/$mid?with_components=true" \
+      "$WEBHOOK_URL/messages/$mid?with_components=true$thread_qs" \
       -H 'Content-Type: application/json' --data-binary @"$payload")
     if [ "$code" = "200" ]; then echo "edited  $f ($mid)"; rm -f "$resp"; return; fi
     if [ "$code" = "404" ]; then
@@ -50,6 +64,11 @@ publish_file() {
     else
       echo "patch failed ($code) for $f: $(cat "$resp")" >&2; rm -f "$resp"; exit 1
     fi
+  fi
+  if [ -n "$THREAD_ID" ]; then
+    echo "no id.json entry for $f but this channel targets an existing thread ($THREAD_ID)." >&2
+    echo "creating a new forum thread isn't supported — seed $IDS with the real message id instead." >&2
+    exit 1
   fi
   newid=$(curl -sS -X POST "$WEBHOOK_URL?with_components=true&wait=true" \
     -H 'Content-Type: application/json' --data-binary @"$payload" \

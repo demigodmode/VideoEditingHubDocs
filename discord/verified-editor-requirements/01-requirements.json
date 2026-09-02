@@ -1,0 +1,61 @@
+{
+  "flags": 32768,
+  "allowed_mentions": {
+    "parse": []
+  },
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 14908706,
+      "components": [
+        {
+          "type": 10,
+          "content": "# Verified Editor Application Requirements"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "To apply for the Verified Editor role, make sure you meet the following requirements.\n\n- **Server Activity:** You must have been a member for at least 2 months. Run `/cooldown` to learn more.\n\n- **Work Examples:** Provide at least 3 examples of published client work, including screenshots of positive client feedback.\n\n- **Quality:** Submit high-quality videos (1080p or higher). No drafts, only published work is accepted.\n\n- **Versatility:** Show a range of editing skills across different genres (gaming, vlogs, motion graphics, etc.).\n\n- **Payment Methods:** Provide proof you use reliable payment methods (no crypto or Bitcoin).\n\n- **Service Description:** Describe the services you offer, including specialties, turnaround time, and pricing structure.\n\n- **Portfolio & Contact:** Submit a professional portfolio or website. Provide an email or another contact method besides Discord DMs, plus any professional social media profiles.\n\n- **Professionalism:** No active warnings on the server. Professional behavior and following the server rules are required.\n\n- **Client Testimonials:** Provide at least 3 verifiable client testimonials.\n\n- **No Cloud Links:** Don't submit Google Drive, OneDrive, or other cloud storage links. Only direct portfolio or website links are accepted.\n\n- **Review Time:** Allow at least 1 week for the review process.\n\n- **Reapplication:** If denied, you can reapply after 2 months. Run `/cooldown` to learn more."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "**Application Process:** Go to <#1278851988334972949>, select Verified Editor Application, and submit the required materials.\n\n**Reminder:** Incomplete applications will be rejected. Make sure all materials are up to date and professional."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 1,
+          "components": [
+            {
+              "type": 2,
+              "style": 5,
+              "label": "Apply Here",
+              "url": "https://discord.com/channels/732343015711965204/1278851988334972949"
+            }
+          ]
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Verified Editor Requirements  ·  Last revised <t:1788385754:D>"
+        }
+      ]
+    }
+  ]
+}
