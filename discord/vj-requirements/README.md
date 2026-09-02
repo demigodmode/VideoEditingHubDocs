@@ -1,7 +1,8 @@
 # VJ requirements posts
 
 The Verified Jobs "requirements" messages that sit above the submit button, managed
-as code instead of Discohook. Content lives in `build.py`; it compiles to Discord
+as code instead of Discohook. Content lives in `content.py`; the shared
+[docs-as-code engine](../_engine/README.md) compiles it to Discord
 [Components V2](https://docs.discord.com/developers/components/using-message-components)
 payloads (`NN-name.json`) that get posted/edited through a channel webhook.
 
@@ -19,23 +20,22 @@ payloads (`NN-name.json`) that get posted/edited through a channel webhook.
 
 ## Editing content
 
-1. Edit the text in `build.py` (single source of truth).
-2. `python3 build.py` regenerates the JSON.
+1. Edit the text in `content.py` (single source of truth).
+2. `python3 ../_engine/build.py .` regenerates the JSON.
 3. Publish (below). Existing posts are **edited in place** — no re-post, no re-ping.
 
 Never hand-edit the `NN-*.json` files; they're generated.
 
 ## Publishing
 
-**Via GitHub Actions (normal path):** Actions tab → "VJ requirements posts" → Run
-workflow. It builds, posts/edits every message, and commits the message IDs back to
-`ids.json`. Trigger is manual for now; flip on the `push` block in the workflow once
-you trust it.
+**Via GitHub Actions (normal path):** Actions tab → "Publish docs to Discord" → Run
+workflow → pick `vj-requirements`. It builds, posts/edits every message, and commits
+the message IDs back to `ids.json`. Trigger is manual.
 
 **Locally (for testing):**
 ```bash
-WEBHOOK_URL='https://discord.com/api/webhooks/xxx/yyy' ./send.sh          # all
-WEBHOOK_URL='...' ./send.sh 02-rates.json                                 # one
+WEBHOOK_URL='https://discord.com/api/webhooks/xxx/yyy' bash ../_engine/send.sh .          # all
+WEBHOOK_URL='...' bash ../_engine/send.sh . 02-rates.json                                 # one
 ```
 
 ## How editing-in-place works
