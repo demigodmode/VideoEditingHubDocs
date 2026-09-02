@@ -25,17 +25,34 @@ cd "$CHANNEL_DIR"
 IDS=ids.json
 [ -f "$IDS" ] || echo '{}' > "$IDS"
 
+shopt -s nullglob
 files=("$@")
 [ ${#files[@]} -eq 0 ] && files=(0*-*.json)
+
+if [ ${#files[@]} -eq 0 ]; then
+  echo "nothing to publish in $CHANNEL_DIR"
+  exit 0
+fi
 
 for f in "${files[@]}"; do
   mid=$(python3 -c "import json;print(json.load(open('$IDS')).get('$f',''))")
   if [ -n "$mid" ]; then
-    code=$(curl -sS -o /dev/null -w '%{http_code}' -X PATCH \
+    resp=$(mktemp)
+    code=$(curl -sS -o "$resp" -w '%{http_code}' -X PATCH \
       "$WEBHOOK_URL/messages/$mid?with_components=true" \
       -H 'Content-Type: application/json' --data-binary @"$f")
-    if [ "$code" = "200" ]; then echo "edited  $f ($mid)"; continue; fi
-    echo "patch $code for $f — posting a new one"
+    if [ "$code" = "200" ]; then
+      echo "edited  $f ($mid)"
+      rm -f "$resp"
+      continue
+    elif [ "$code" = "404" ]; then
+      echo "patch 404 for $f — message gone, posting a new one"
+      rm -f "$resp"
+    else
+      echo "patch failed ($code) for $f: $(cat "$resp")" >&2
+      rm -f "$resp"
+      exit 1
+    fi
   fi
   newid=$(curl -sS -X POST "$WEBHOOK_URL?with_components=true&wait=true" \
     -H 'Content-Type: application/json' --data-binary @"$f" \

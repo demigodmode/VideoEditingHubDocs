@@ -25,7 +25,10 @@ REVISED_TS = int(time.time())
 
 
 def color(hexstr):
-    return int(hexstr.lstrip("#"), 16)
+    digits = hexstr.lstrip("#")
+    if len(digits) != 6 or any(c not in "0123456789abcdefABCDEF" for c in digits):
+        sys.exit(f"bad accent color {hexstr!r} — need exactly 6 hex digits (e.g. #E8C84A)")
+    return int(digits, 16)
 
 
 def sep():
@@ -56,13 +59,26 @@ def main():
     meta, messages = load_content(channel_dir)
     brand = meta["brand"]
     default_accent = meta["default_accent"]
-    for num, slug, accent_hex, title, footer_label, body in messages:
+    over_limit = False
+    for i, entry in enumerate(messages):
+        try:
+            num, slug, accent_hex, title, footer_label, body = entry
+        except (TypeError, ValueError):
+            ident = ""
+            if isinstance(entry, (tuple, list)) and len(entry) >= 2:
+                ident = f" (num={entry[0]!r}, slug={entry[1]!r})"
+            sys.exit(f"malformed MESSAGES entry at index {i}{ident}: expected 6 items, got {entry!r}")
         payload = build_one(brand, accent_hex or default_accent, title, footer_label, body)
         chars = sum(len(c["content"]) for c in payload["components"][0]["components"] if c["type"] == 10)
         out = os.path.join(channel_dir, f"{num}-{slug}.json")
         with open(out, "w") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
-        print(f"{num}-{slug}.json  {chars} chars" + ("  ⚠️OVER4000" if chars > 4000 else ""))
+        print(f"{num}-{slug}.json  {chars} chars")
+        if chars > 4000:
+            print(f"⚠️OVER4000: {num}-{slug}.json is {chars} chars", file=sys.stderr)
+            over_limit = True
+    if over_limit:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
