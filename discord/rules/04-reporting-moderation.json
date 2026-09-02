@@ -1,5 +1,8 @@
 {
   "flags": 32768,
+  "allowed_mentions": {
+    "parse": []
+  },
   "components": [
     {
       "type": 17,
@@ -25,7 +28,7 @@
         },
         {
           "type": 10,
-          "content": "-# **Video Editing Hub**  ·  Reporting & Moderation  ·  Last revised <t:1788383111:D>"
+          "content": "-# **Video Editing Hub**  ·  Reporting & Moderation  ·  Last revised <t:1788384156:D>"
         }
       ]
     }

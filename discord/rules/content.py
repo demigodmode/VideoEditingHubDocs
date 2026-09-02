@@ -44,7 +44,7 @@ MESSAGES = [
     ("02", "posting-content", "#5865F2", "# 3. Spamming & Advertising", "Posting & Content", f"""\
 > **3.1 No spamming.** No flooding chat with messages, GIFs, or emojis.
 
-> **3.2 No excessive pinging.** Don't spam pings. (Mass-pinging @everyone or @here is an instant ban, see 8.3.)
+> **3.2 No excessive pinging.** Don't spam pings. (Mass-pinging `@everyone` or `@here` is an instant ban, see 8.3.)
 
 > **3.3 No DM advertising.** Don't advertise in members' DMs. (Instant ban, see 8.7.)
 
@@ -99,7 +99,7 @@ These skip warnings and go straight to a ban.
 
 > **8.2 Transphobic / homophobic slurs.** Targeting someone's gender identity or sexual orientation with slurs, even as a joke.
 
-> **8.3 Tagging @everyone or @here.** Mass tagging disrupts the server and spams members.
+> **8.3 Tagging `@everyone` or `@here`.** Mass tagging disrupts the server and spams members.
 
 > **8.4 Spamming ads / repeated misposting after warnings.** Posting ads or irrelevant links, or misusing channels after being told to stop, whether intentional or careless. (Escalation of 3.1, 3.4, and 5.1.)
 

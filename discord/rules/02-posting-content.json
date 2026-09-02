@@ -1,5 +1,8 @@
 {
   "flags": 32768,
+  "allowed_mentions": {
+    "parse": []
+  },
   "components": [
     {
       "type": 17,
@@ -16,7 +19,7 @@
         },
         {
           "type": 10,
-          "content": "> **3.1 No spamming.** No flooding chat with messages, GIFs, or emojis.\n\n> **3.2 No excessive pinging.** Don't spam pings. (Mass-pinging @everyone or @here is an instant ban, see 8.3.)\n\n> **3.3 No DM advertising.** Don't advertise in members' DMs. (Instant ban, see 8.7.)\n\n> **3.4 No unapproved links.** No referral links or Discord server invites.\n\n> **3.5 No selling.** No selling accounts, courses, photos, followers, presets, and the like. This includes giving away your own free assets.\n\n> **3.6 No agency posts.** No agency advertisements. (See 8.8 on middle-manning.)"
+          "content": "> **3.1 No spamming.** No flooding chat with messages, GIFs, or emojis.\n\n> **3.2 No excessive pinging.** Don't spam pings. (Mass-pinging `@everyone` or `@here` is an instant ban, see 8.3.)\n\n> **3.3 No DM advertising.** Don't advertise in members' DMs. (Instant ban, see 8.7.)\n\n> **3.4 No unapproved links.** No referral links or Discord server invites.\n\n> **3.5 No selling.** No selling accounts, courses, photos, followers, presets, and the like. This includes giving away your own free assets.\n\n> **3.6 No agency posts.** No agency advertisements. (See 8.8 on middle-manning.)"
         },
         {
           "type": 14,
@@ -34,7 +37,7 @@
         },
         {
           "type": 10,
-          "content": "-# **Video Editing Hub**  ·  Posting & Content  ·  Last revised <t:1788383111:D>"
+          "content": "-# **Video Editing Hub**  ·  Posting & Content  ·  Last revised <t:1788384156:D>"
         }
       ]
     }

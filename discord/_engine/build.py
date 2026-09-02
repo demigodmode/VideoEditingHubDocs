@@ -51,7 +51,15 @@ def build_one(brand, accent_hex, title, footer_label, body):
         comps.append({"type": 10, "content": b})
         comps.append(sep())                                      # section dividers + divider before footer
     comps.append({"type": 10, "content": f"-# **{brand}**  ·  {footer_label}  ·  Last revised <t:{REVISED_TS}:D>"})
-    return {"flags": 32768, "components": [{"type": 17, "accent_color": color(accent_hex), "components": comps}]}
+    return {
+        "flags": 32768,
+        # TextDisplay content is real message content, not an embed description — Discord
+        # parses @everyone/@here/roles in it like any other message. Suppress all of that;
+        # these are informational posts, never notifications. (A literal <@user-id> mention
+        # still renders as a clickable mention, it just won't ping.)
+        "allowed_mentions": {"parse": []},
+        "components": [{"type": 17, "accent_color": color(accent_hex), "components": comps}],
+    }
 
 
 def main():

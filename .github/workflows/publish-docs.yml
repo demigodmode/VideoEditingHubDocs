@@ -41,7 +41,10 @@ jobs:
           CHANNEL: ${{ github.event.inputs.channel }}
         run: |
           dir="discord/$CHANNEL"
-          if ! git diff --quiet "$dir/ids.json"; then
+          # git diff alone misses a brand-new (untracked) ids.json on a channel's first
+          # publish, so message IDs never got committed back. git status catches both
+          # a modified tracked file and a new untracked one.
+          if [ -n "$(git status --porcelain "$dir/ids.json")" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add "$dir/ids.json"
