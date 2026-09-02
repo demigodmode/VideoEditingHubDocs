@@ -1,0 +1,47 @@
+name: Publish docs to Discord
+
+# Manual only. Pick a channel; it builds + posts/edits that channel's messages.
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Which channel folder to publish
+        required: true
+        type: choice
+        options:
+          - vj-requirements
+          # add each new channel folder here as you onboard it
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # to commit updated message IDs back
+    env:
+      # One line per channel. Secret name = WEBHOOK_<CHANNEL>, uppercased, - -> _.
+      WEBHOOK_VJ_REQUIREMENTS: ${{ secrets.WEBHOOK_VJ_REQUIREMENTS }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve webhook + publish
+        run: |
+          chan="${{ github.event.inputs.channel }}"
+          dir="discord/$chan"
+          [ -d "$dir" ] || { echo "no such channel folder: $dir"; exit 1; }
+          var="WEBHOOK_$(echo "$chan" | tr 'a-z-' 'A-Z_')"
+          url="${!var:-}"
+          [ -n "$url" ] || { echo "missing secret for $chan (env $var)"; exit 1; }
+          WEBHOOK_URL="$url" bash discord/_engine/send.sh "$dir"
+
+      - name: Commit message IDs
+        run: |
+          dir="discord/${{ github.event.inputs.channel }}"
+          if ! git diff --quiet "$dir/ids.json"; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add "$dir/ids.json"
+            git commit -m "record ${{ github.event.inputs.channel }} message IDs [skip ci]"
+            git push
+          else
+            echo "no ID changes"
+          fi
