@@ -1,0 +1,42 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 5793266,
+      "components": [
+        {
+          "type": 10,
+          "content": "# 5. Channel Usage"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "> **5.1 Stay on topic.** Keep messages in the right channel. Repeated misposting after a warning can lead to a mute or ban.\n\n> **5.2 No competition posts.** Only with prior approval from the owner.\n\n> **5.3 Editors in the free-ad channel.** Editors shouldn't ask for payment from clients who posted in <#1138844785558433802>.\n\n> **5.4 Post duration.** Client posts older than 7 days are locked, closed, and may be deleted."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "# 6. Voice Chat\n\n> **6.1 No channel surfing.** Don't hop between channels repeatedly.\n\n> **6.2 Keep noise appropriate.** No annoying, loud, or high-pitched noises.\n\n> **6.3 Minimize background noise.** Use push-to-talk if you need to.\n\n> **6.4 No streaming copyrighted material.** No music, movies, or TV without permission (same as 4.3, for voice)."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Channels & Voice  ·  Last revised <t:1788383111:D>"
+        }
+      ]
+    }
+  ]
+}

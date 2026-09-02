@@ -34,29 +34,48 @@ if [ ${#files[@]} -eq 0 ]; then
   exit 0
 fi
 
-for f in "${files[@]}"; do
+# POST new / PATCH existing. $1 = ids.json key (the real filename); $2 = payload file
+# to send (same as $1 normally, or a jump-resolved temp copy).
+publish_file() {
+  local f="$1" payload="$2" mid resp code newid
   mid=$(python3 -c "import json;print(json.load(open('$IDS')).get('$f',''))")
   if [ -n "$mid" ]; then
     resp=$(mktemp)
     code=$(curl -sS -o "$resp" -w '%{http_code}' -X PATCH \
       "$WEBHOOK_URL/messages/$mid?with_components=true" \
-      -H 'Content-Type: application/json' --data-binary @"$f")
-    if [ "$code" = "200" ]; then
-      echo "edited  $f ($mid)"
-      rm -f "$resp"
-      continue
-    elif [ "$code" = "404" ]; then
-      echo "patch 404 for $f — message gone, posting a new one"
-      rm -f "$resp"
+      -H 'Content-Type: application/json' --data-binary @"$payload")
+    if [ "$code" = "200" ]; then echo "edited  $f ($mid)"; rm -f "$resp"; return; fi
+    if [ "$code" = "404" ]; then
+      echo "patch 404 for $f — message gone, posting a new one"; rm -f "$resp"
     else
-      echo "patch failed ($code) for $f: $(cat "$resp")" >&2
-      rm -f "$resp"
-      exit 1
+      echo "patch failed ($code) for $f: $(cat "$resp")" >&2; rm -f "$resp"; exit 1
     fi
   fi
   newid=$(curl -sS -X POST "$WEBHOOK_URL?with_components=true&wait=true" \
-    -H 'Content-Type: application/json' --data-binary @"$f" \
+    -H 'Content-Type: application/json' --data-binary @"$payload" \
     | python3 -c 'import json,sys;print(json.load(sys.stdin)["id"])')
   python3 -c "import json;d=json.load(open('$IDS'));d['$f']='$newid';json.dump(d,open('$IDS','w'),indent=2,ensure_ascii=False)"
   echo "posted  $f ($newid)"
+}
+
+# Glossary-style files with [[JUMP:slug]] tokens must go LAST — their links point at
+# the other messages' IDs, which only exist once those are posted.
+plain=(); jump=()
+for f in "${files[@]}"; do
+  if grep -qF '[[JUMP:' "$f"; then jump+=("$f"); else plain+=("$f"); fi
 done
+
+for f in "${plain[@]}"; do publish_file "$f" "$f"; done
+
+if [ ${#jump[@]} -gt 0 ]; then
+  meta=$(curl -sS "$WEBHOOK_URL")
+  guild=$(echo "$meta"   | python3 -c 'import json,sys;print(json.load(sys.stdin).get("guild_id") or "")')
+  channel=$(echo "$meta" | python3 -c 'import json,sys;print(json.load(sys.stdin).get("channel_id") or "")')
+  [ -n "$guild" ] && [ -n "$channel" ] || { echo "webhook gave no guild_id/channel_id — can't build jump links" >&2; exit 1; }
+  for f in "${jump[@]}"; do
+    resolved=$(mktemp)
+    python3 "$ENGINE_DIR/resolve_jumps.py" "$CHANNEL_DIR" "$f" "$guild" "$channel" > "$resolved"
+    publish_file "$f" "$resolved"
+    rm -f "$resolved"
+  done
+fi

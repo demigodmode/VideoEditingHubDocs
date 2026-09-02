@@ -10,6 +10,7 @@ on:
         type: choice
         options:
           - vj-requirements
+          - rules
           # add each new channel folder here as you onboard it
 
 jobs:
@@ -20,6 +21,7 @@ jobs:
     env:
       # One line per channel. Secret name = WEBHOOK_<CHANNEL>, uppercased, - -> _.
       WEBHOOK_VJ_REQUIREMENTS: ${{ secrets.WEBHOOK_VJ_REQUIREMENTS }}
+      WEBHOOK_RULES: ${{ secrets.WEBHOOK_RULES }}
     steps:
       - uses: actions/checkout@v4
 

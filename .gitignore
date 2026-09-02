@@ -8,3 +8,5 @@ __pycache__/
 .webhook
 *.webhook
 .env
+local_docs/
+__pycache__/

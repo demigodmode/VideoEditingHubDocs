@@ -1,0 +1,33 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 5793266,
+      "components": [
+        {
+          "type": 10,
+          "content": "# Rules Glossary"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "Jump to a section:\n\n- [1. General Conduct]([[JUMP:conduct-communication]])\n- [2. Language & Communication]([[JUMP:conduct-communication]])\n- [3. Spamming & Advertising]([[JUMP:posting-content]])\n- [4. Content Restrictions]([[JUMP:posting-content]])\n- [5. Channel Usage]([[JUMP:channels-voice]])\n- [6. Voice Chat]([[JUMP:channels-voice]])\n- [7. Reporting & Moderation]([[JUMP:reporting-moderation]])\n- [8. Instant-Ban Offenses]([[JUMP:instant-bans]])"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Rules Glossary  ·  Last revised <t:1788383111:D>"
+        }
+      ]
+    }
+  ]
+}

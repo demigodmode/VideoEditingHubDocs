@@ -1,0 +1,33 @@
+{
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "accent_color": 5793266,
+      "components": [
+        {
+          "type": 10,
+          "content": "# 7. Reporting & Moderation"
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "> **7.1 Report properly.** Don't call people out in chat. DM <@1255909585785720882> to open a ticket and report them.\n\n> **7.2 No unofficial bots.** Don't invite unofficial bots.\n\n> **7.3 Warnings and infractions.** After two warnings, any further infraction is a ban.\n\n> **7.4 How enforcement works.** Most rules (sections 1 to 7) follow the two-warning system in 7.3. The offenses in section 8 skip warnings and are immediate bans. Staff have the final say, and these rules can change over time."
+        },
+        {
+          "type": 14,
+          "divider": true,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": "-# **Video Editing Hub**  ·  Reporting & Moderation  ·  Last revised <t:1788383111:D>"
+        }
+      ]
+    }
+  ]
+}
