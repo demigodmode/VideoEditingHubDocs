@@ -3,6 +3,8 @@
   "allowed_mentions": {
     "parse": []
   },
+  "embeds": [],
+  "content": "",
   "components": [
     {
       "type": 17,
@@ -53,7 +55,7 @@
         },
         {
           "type": 10,
-          "content": "-# **Video Editing Hub**  ·  Verified Editor Requirements  ·  Last revised <t:1788385754:D>"
+          "content": "-# **Video Editing Hub**  ·  Verified Editor Requirements  ·  Last revised <t:1788387631:D>"
         }
       ]
     }

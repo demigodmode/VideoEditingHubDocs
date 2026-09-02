@@ -67,6 +67,12 @@ def build_one(brand, accent_hex, title, footer_label, body, button=None):
         # these are informational posts, never notifications. (A literal <@user-id> mention
         # still renders as a clickable mention, it just won't ping.)
         "allowed_mentions": {"parse": []},
+        # PATCHing a message doesn't clear fields you omit, it leaves them as-is. Converting
+        # a legacy embed/plain-content message (e.g. an old Discohook post) to V2 needs these
+        # explicitly emptied, or Discord rejects the edit: "embeds cannot be used with
+        # IS_COMPONENTS_V2". Harmless no-op for a message that's already V2 or brand new.
+        "embeds": [],
+        "content": "",
         "components": [{"type": 17, "accent_color": color(accent_hex), "components": comps}],
     }
 
