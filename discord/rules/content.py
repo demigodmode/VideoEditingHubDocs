@@ -126,12 +126,12 @@ These skip warnings and go straight to a ban.
     ("06", "glossary", "#5865F2", "# Rules Glossary", "Rules Glossary", """\
 Jump to a section:
 
-- [1. General Conduct]([[JUMP:conduct-communication]])
-- [2. Language & Communication]([[JUMP:conduct-communication]])
-- [3. Spamming & Advertising]([[JUMP:posting-content]])
-- [4. Content Restrictions]([[JUMP:posting-content]])
-- [5. Channel Usage]([[JUMP:channels-voice]])
-- [6. Voice Chat]([[JUMP:channels-voice]])
-- [7. Reporting & Moderation]([[JUMP:reporting-moderation]])
-- [8. Instant-Ban Offenses]([[JUMP:instant-bans]])"""),
+### [1. General Conduct]([[JUMP:conduct-communication]])
+### [2. Language & Communication]([[JUMP:conduct-communication]])
+### [3. Spamming & Advertising]([[JUMP:posting-content]])
+### [4. Content Restrictions]([[JUMP:posting-content]])
+### [5. Channel Usage]([[JUMP:channels-voice]])
+### [6. Voice Chat]([[JUMP:channels-voice]])
+### [7. Reporting & Moderation]([[JUMP:reporting-moderation]])
+### [8. Instant-Ban Offenses]([[JUMP:instant-bans]])"""),
 ]
