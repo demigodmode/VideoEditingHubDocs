@@ -11,8 +11,8 @@ Which tier each command needs. Higher tiers can do everything the lower ones can
 | Tier | Who | Commands |
 |------|-----|----------|
 | 3 | Trial Moderator and up (all staff) | `info`, `history`, `summarize` |
-| 2 | Moderator and up | `reply`, `anonymous_reply`, `snippet`, `edit`, `close`, `schedule_close`, `cancel_close` |
-| 1 | Head Moderator and up | `contact`, `block`, `unblock`, `delete` |
+| 2 | Moderator and up | `contact`, `reply`, `anonymous_reply`, `snippet`, `edit`, `close`, `schedule_close`, `cancel_close` |
+| 1 | Head Moderator and up | `block`, `unblock`, `delete` |
 
 The ticket dashboard itself (`/ticket_dashboard`) is Admin-only (tier 0).
 
